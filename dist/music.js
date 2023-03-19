@@ -10,7 +10,7 @@ const ap = new APlayer({
     mutex: true, //互斥，阻止多个播放器同时播放，当前播放器播放时暂停其他播放器
     listFolded: true, //列表默认折叠
     listMaxHeight: 60, //列表最大高度
-    lrcType: 3, //歌词传递方式
+    lrcType: 0, //歌词传递方式
     audio: [
         {
             name: 'ヒカリ',
@@ -22,7 +22,7 @@ const ap = new APlayer({
         {
             name: 'Avid',
             artist: 'mizuki',
-            url: 'https://m801.music.126.net/20230319002558/e812a7c571796478fd3af0b311fec96a/jdymusic/obj/wo3DlMOGwrbDjj7DisKw/8328539066/d382/dd53/e17f/7549926012e15441a941c7ffdc8ec464.mp3',
+            url: '/music/Avid.mp3',
             cover: '/img/86.jpg',
             lrc: '/music/Avid.lrc', 
         },
