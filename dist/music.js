@@ -17,14 +17,14 @@ const ap = new APlayer({
             artist: '樹海',
             url: '/music/ヒカリ.mp3',
             cover: '/img/fate.jpg',
-            lrc: '/music/avid.lrc', //音频歌词，配合上面的lrcType使用
+            lrc: '/music/ヒカリ.lrc', //音频歌词，配合上面的lrcType使用
         },
         {
             name: 'Avid',
             artist: 'mizuki',
             url: 'https://m801.music.126.net/20230319002558/e812a7c571796478fd3af0b311fec96a/jdymusic/obj/wo3DlMOGwrbDjj7DisKw/8328539066/d382/dd53/e17f/7549926012e15441a941c7ffdc8ec464.mp3',
             cover: '/img/86.jpg',
-            lrc: '/music/avid.lrc', 
+            lrc: '/music/Avid.lrc', 
         },
     ]
 });
