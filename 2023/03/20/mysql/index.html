@@ -1,0 +1,921 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/%E8%8E%AB%E5%A8%9C.JPG">
+  <link rel="icon" href="/img/%E8%8E%AB%E5%A8%9C.JPG">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#92CAFA">
+  <meta name="author" content="RubyRose">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="mysql面试题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mysql">
+<meta property="og:url" content="https://rubyrose-tat.github.io/2023/03/20/mysql/index.html">
+<meta property="og:site_name" content="RubyRose">
+<meta property="og:description" content="mysql面试题">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img01.anzhiy.cn/useruploads/114/2023/03/20/64187f13e831a.png">
+<meta property="og:image" content="https://img01.anzhiy.cn/useruploads/114/2023/03/20/64187f13e8481.png">
+<meta property="article:published_time" content="2023-03-20T11:00:00.000Z">
+<meta property="article:modified_time" content="2023-03-20T15:47:17.655Z">
+<meta property="article:author" content="RubyRose">
+<meta property="article:tag" content="面试">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://img01.anzhiy.cn/useruploads/114/2023/03/20/64187f13e831a.png">
+  
+  
+  
+  <title>mysql - RubyRose</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/scrollbar.css">
+<link rel="stylesheet" href="/css/aplayer.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"rubyrose-tat.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":false,"image_caption":{"enable":true},"image_zoom":{"enable":false,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":2},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"ebaa328905b91cf015619fb082f56f3c","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"nGTrSnPlPtwXIU0lsbUWeSxn-MdYXbMMI","app_key":"fiCsW7XMGdSKj860M3ZLpsa4","server_url":"https://ngtrsnpl.api.lncldglobal.com","path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+    <!-- Baidu Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?ebaa328905b91cf015619fb082f56f3c";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="RubyRose" type="application/atom+xml">
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>RubyRoseのBlog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/bangumis/">
+                <i class="iconfont icon-bilibili-fill"></i>
+                <span>番剧</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/home.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="mysql"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-03-20 19:00" pubdate>
+          2023年3月20日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.7k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          23 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">mysql</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：2023年3月20日 晚上
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="SQL语句">SQL语句</h2>
+<hr>
+<h4 id="增">增</h4>
+<h6 id="创建用户：">创建用户：</h6>
+<p><code>create user [用户名]@'%' identified by '123456' </code>;</p>
+<h6 id="创建数据库：">创建数据库：</h6>
+<p><code>create database [数据库名];</code></p>
+<h6 id="创建数据库表：">创建数据库表：</h6>
+<p><code>create table [表名] (id int, name char(30));</code></p>
+<h6 id="插入数据">插入数据:</h6>
+<p><code>insert into [表名] (id,name,age) values (1,'张三',21);</code></p>
+<hr>
+<h4 id="删">删</h4>
+<h6 id="删除用户">删除用户:</h6>
+<p><code>drop user [用户名]@'%';</code></p>
+<h6 id="删除数据库">删除数据库:</h6>
+<p><code>drop database [数据库名];</code></p>
+<h6 id="删除数据表">删除数据表:</h6>
+<p><code>drop table [表名];</code></p>
+<h6 id="删除数据">删除数据:</h6>
+<p><code>delete from [表名] where id=5;</code></p>
+<p><code>delete from [表名] where age between 23 and 25;</code></p>
+<hr>
+<h4 id="改">改</h4>
+<h6 id="修改表中的数据">修改表中的数据:</h6>
+<p><code>update [表名] set age=21 where id=3;</code></p>
+<h6 id="修改表的名称">修改表的名称:</h6>
+<p><code>alter table [表名] rename [新表名];</code></p>
+<h6 id="修改表的字段类型">修改表的字段类型:</h6>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs mysql"># modify只能更改列定义(数据类型和其他属性)，不能更改列名<br>alter table [表名] modify name char(50);<br>describe [表名];<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs mysql"># change 可以更改列名称和列定义<br>alter table [表名] change name username char(50);<br>describe [表名];<br></code></pre></td></tr></table></figure>
+<h6 id="添加删除字段">添加删除字段:</h6>
+<p><code>alter table [表名] add time datetime;</code></p>
+<p><code>alter table [表名] drop time;</code></p>
+<hr>
+<h4 id="查">查</h4>
+<h6 id="查看所有数据库">查看所有数据库:</h6>
+<p><code>show databases;</code></p>
+<h6 id="查看指定库内所有数据表">查看指定库内所有数据表:</h6>
+<p><code>show tables;</code></p>
+<h6 id="查看指定数据表的字段结构">查看指定数据表的字段结构:</h6>
+<p><code>describe [表名];</code></p>
+<h6 id="查看所有MySQL用户密码及登录方式">查看所有MySQL用户密码及登录方式:</h6>
+<p><code>select User,Password,Host from mysql.user;</code></p>
+<h6 id="例子">例子:</h6>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs mysql"># 库表 student.report<br># 查询姓李的同学的个数<br>select count(*) from student.report where Name like &#x27;李%&#x27;;<br># 查询表中成绩大于80的前2名同学的名字，并按分数从大到小的顺序排列<br>select Result from report ORDER BY Result DESC limit 2;<br></code></pre></td></tr></table></figure>
+<hr>
+<h4 id="授权">授权</h4>
+<h6 id="授予用户全部权限">授予用户全部权限:</h6>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs mysql"># 给已存在用户授权<br>grant  all on [库名].[表名] to [用户名]@&#x27;%&#x27;;<br><br># 创建用户并授权<br>grant  all on [库名].[表名] to [用户名]@&#x27;%&#x27; identified by &#x27;123456&#x27;;<br></code></pre></td></tr></table></figure>
+<h6 id="取消用户的删除库、表、表中数据的权限">取消用户的删除库、表、表中数据的权限:</h6>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs mysql"> # 取消删除权限<br>revoke drop,delete on [库名].[表名] from [用户名]@&#x27;%&#x27;;<br><br># 查看指定用户的授权<br>show grants for [用户名]@&#x27;%&#x27;;<br></code></pre></td></tr></table></figure>
+<hr>
+<h4 id="启动关闭">启动关闭</h4>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-comment"># CentOS 6 及更早的版本中使用 service 命令来管理MySQL服务</span><br>service mysqld start<br>service mysqld stop<br>service mysqld restart<br>service mysqld status<br><br><span class="hljs-comment"># CentOS 7 或更新版本使用 systemctl 命令来管理MySQL服务</span><br>sudo systemctl start mysql  <span class="hljs-comment"># systemctl start mysqld.service</span><br>sudo systemctl stop mysql<br>sudo systemctl restart mysql<br>sudo systemctl status mysql<br><br><span class="hljs-comment"># 如果MySQL服务已经安装但没有作为系统服务运行，则可以使用以下命令手动启动和关闭MySQL服务</span><br>sudo <span class="hljs-regexp">/etc/i</span>nit.d/mysql start<br>sudo <span class="hljs-regexp">/etc/i</span>nit.d/mysql stop<br>sudo <span class="hljs-regexp">/etc/i</span>nit.d/mysql restart<br>sudo <span class="hljs-regexp">/etc/i</span>nit.d/mysql status<br><br><span class="hljs-comment"># 登录数据库</span><br>mysql -uroot -p<br></code></pre></td></tr></table></figure>
+<hr>
+<h2 id="MySQL集群">MySQL集群</h2>
+<hr>
+<h5 id="MySQL主从工作原理">MySQL主从工作原理</h5>
+<p>技术点：bin-log日志</p>
+<p>开启主服务器的bin-log日志记录功能，将主服务器的bin-log日志传到从服务器，从服务器根据日志内容将数据还原到本地。</p>
+<p><em>从服务器主动把主服务器上的数据同步到本地（备份）</em></p>
+<p><img src="https://img01.anzhiy.cn/useruploads/114/2023/03/20/64187f13e831a.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<h5 id="主从故障切换">主从故障切换</h5>
+<p>从服务器切换为主服务器</p>
+<ul>
+<li>
+<p>登陆所有从服务器查看POST信息，使用POST最大的作为新的主服务器</p>
+</li>
+<li>
+<p>对该服务器执行<code>stop slave</code></p>
+</li>
+<li>
+<p>修改 my.cnf 配置文件，开启该服务器的log-bin并重新启动数据库服务</p>
+</li>
+<li>
+<p>登陆数据库执行<code>restet master,  show master status</code>查看主库信息</p>
+<p>创建授权,同步用户与权限,修改对应服务器的IP地址等信息</p>
+</li>
+<li>
+<p>登陆其它从库，执行change master操作，查看同步状态</p>
+</li>
+</ul>
+<h5 id="数据库代理工具-Amoeba">数据库代理工具: Amoeba</h5>
+<p>Amoeba致力于MySQL的分布式数据库前端代理层，它主要在应用层访问MySQL的时候充当SQL路由功能，专注于分布式数据库代理层（Database Proxy）开发。具有负载均衡、高可用、SQL过滤、读写分离、数据切片的功能。</p>
+<p><img src="https://img01.anzhiy.cn/useruploads/114/2023/03/20/64187f13e8481.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<h2 id="MySQL索引">MySQL索引</h2>
+<h5 id="什么是索引">什么是索引</h5>
+<p>在MySQL数据库中，索引是一种用于优化查询性能的关键组件。索引的本质是数据结构，可以加速数据的查找和排序，通过减少磁盘I/O和内存操作来提高查询效率。</p>
+<p>MySQL支持多种类型的索引，包括B-Tree索引、Hash索引、Full-Text索引等。其中，B-Tree索引是最常见的索引类型，也是MySQL默认的索引类型。</p>
+<h5 id="索引的分类">索引的分类</h5>
+<p>主键索引</p>
+<p>单值索引	一个索引只包含单个列，一个表可以有多个单列索引。如果字段会被经常用来检索就可以用单值索引。</p>
+<p>复合索引	一个索引包含多个列</p>
+<p>唯一索引	所有列的值必须唯一，但是允许有空值。</p>
+<p>普通索引和唯一索引可以称为辅助索引</p>
+<h5 id="优势">优势</h5>
+<ol>
+<li>提高查询效率</li>
+<li>减少对数据表的排序操作</li>
+<li>随机IO查询变顺序IO查询</li>
+</ol>
+<h5 id="劣势">劣势</h5>
+<ol>
+<li>实际上索引也是一张表，包含主键和索引字段，并指向实体表的记录，索引列也是要占用空间的</li>
+<li>虽然索引提高了查询速度，但是会降低更新表的速度</li>
+<li>索引只是提高效率的一个因素，建立索引也要花费时间</li>
+</ol>
+<h5 id="什么时候需要创建索引">什么时候需要创建索引</h5>
+<ol>
+<li>主键自动建立唯一索引</li>
+<li>频繁作为查询条件的字段应该创建索引</li>
+<li>查询中与其他表关联的字段，外键关系创建索引</li>
+<li>单键/组合索引的选择问题：在高并发下倾向创建组合索引</li>
+<li>查询中排序的字段，排序字段若通过索引去访问将大大提高排序速度</li>
+<li>查询中统计和分组字段（group by）</li>
+</ol>
+<h5 id="哪些情况不要创建索引">哪些情况不要创建索引</h5>
+<ol>
+<li>频繁更新的字段不适合创建索引</li>
+<li>where条件里用不到的字段不创建索引</li>
+<li>表记录太少，如果才几万条数据，不需要创建索引</li>
+</ol>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Linux/" class="category-chain-item">Linux</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E9%9D%A2%E8%AF%95/">#面试</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>mysql</div>
+      <div>https://rubyrose-tat.github.io/2023/03/20/mysql/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>RubyRose</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年3月20日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
+                    <i class="iconfont icon-nc"></i>
+                  </span>
+                </a>
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                    <i class="iconfont icon-sa"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/03/20/Redis/" title="Redis">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Redis</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/03/20/%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%94%9F%E6%80%81/" title="大数据生态">
+                        <span class="hidden-mobile">大数据生态</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"nGTrSnPlPtwXIU0lsbUWeSxn-MdYXbMMI","appKey":"fiCsW7XMGdSKj860M3ZLpsa4","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"https://ngtrsnpl.api.lncldglobal.com","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+    <!-- 添加网站运行时间 -->
+    <div>
+      <span id="timeDate">载入天数...</span>
+      <span id="times">载入时分秒...</span>
+    </div>
+  
+  
+    <!-- 统计访问量信息 -->
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="/js/Sakura.js"></script>
+<script src="/js/FunnyTitle.js"></script>
+<script src="//cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js"></script>
+<script src="//cdn.jsdelivr.net/combine/gh/dylanNew/live2d/webgl/Live2D/lib/live2d.min.js,npm/pixi.js@6.5.2/dist/browser/pixi.min.js,npm/pixi-live2d-display/dist/index.min.js,gh/Weidows-projects/Live2dLoader/dist/Live2dLoader.min.js"></script>
+<script src="/js/live2d.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+  
+  <!--动态线条背景-->
+  <!-- <script type="text/javascript"
+  color="0,0,0" opacity='0.7' zIndex="-2" count="100" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+  </script> -->
+
+  <!-- 音乐播放器 -->
+  <link rel="stylesheet" href="/dist/APlayer.min.css">
+  <div id="aplayer"></div>
+  <script type="text/javascript" src="/dist/APlayer.min.js"></script>
+  <script type="text/javascript" src="/dist/music.js"></script>
+
+  <!-- 建站时间 -->
+  <script type="text/javascript" src="/js/time.js"></script>
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

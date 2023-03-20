@@ -1,0 +1,1118 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/%E8%8E%AB%E5%A8%9C.JPG">
+  <link rel="icon" href="/img/%E8%8E%AB%E5%A8%9C.JPG">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#92CAFA">
+  <meta name="author" content="RubyRose">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Ubuntu关机命令： shutdown: sudo shutdown  -k 并不会关机，只发出警告信息给所以用户 -r 重新启动系统 -h 关闭系统 -c 取消运行shutdown  halt: 相当于 shutdown -h sudo halt  -w 并不会关机，将关机信息写入到&#x2F;var&#x2F;log&#x2F;wtmp文件中 -d 关闭系统，不把记录写到&#x2F;var&#x2F;log&#x2F;wtmp日志文件中 -f 不调用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu基本操作">
+<meta property="og:url" content="https://rubyrose-tat.github.io/2023/03/20/Linux%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/index.html">
+<meta property="og:site_name" content="RubyRose">
+<meta property="og:description" content="Ubuntu关机命令： shutdown: sudo shutdown  -k 并不会关机，只发出警告信息给所以用户 -r 重新启动系统 -h 关闭系统 -c 取消运行shutdown  halt: 相当于 shutdown -h sudo halt  -w 并不会关机，将关机信息写入到&#x2F;var&#x2F;log&#x2F;wtmp文件中 -d 关闭系统，不把记录写到&#x2F;var&#x2F;log&#x2F;wtmp日志文件中 -f 不调用">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20210320/369118006_1616226631099/4D94653967AF1C5CDB3E74A0480E6419">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20210320/369118006_1616227227623/D0569403B285BDACCEA0F87EED480350">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20210322/369118006_1616421511145/9A0C1B38D99D7EB1E8AA3DBA396CB981">
+<meta property="article:published_time" content="2023-03-20T13:00:00.000Z">
+<meta property="article:modified_time" content="2023-03-20T15:10:35.474Z">
+<meta property="article:author" content="RubyRose">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://uploadfiles.nowcoder.com/images/20210320/369118006_1616226631099/4D94653967AF1C5CDB3E74A0480E6419">
+  
+  
+  
+  <title>Ubuntu基本操作 - RubyRose</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/scrollbar.css">
+<link rel="stylesheet" href="/css/aplayer.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"rubyrose-tat.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":false,"image_caption":{"enable":true},"image_zoom":{"enable":false,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":2},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"ebaa328905b91cf015619fb082f56f3c","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"nGTrSnPlPtwXIU0lsbUWeSxn-MdYXbMMI","app_key":"fiCsW7XMGdSKj860M3ZLpsa4","server_url":"https://ngtrsnpl.api.lncldglobal.com","path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+    <!-- Baidu Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?ebaa328905b91cf015619fb082f56f3c";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="RubyRose" type="application/atom+xml">
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>RubyRoseのBlog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/bangumis/">
+                <i class="iconfont icon-bilibili-fill"></i>
+                <span>番剧</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/home.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Ubuntu基本操作"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-03-20 21:00" pubdate>
+          2023年3月20日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          5.3k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          45 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Ubuntu基本操作</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：2023年3月20日 晚上
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="Ubuntu关机命令：">Ubuntu关机命令：</h2>
+<h4 id="shutdown">shutdown:</h4>
+<p><strong>sudo shutdown</strong></p>
+<ol>
+<li>-k 并不会关机，只发出警告信息给所以用户</li>
+<li>-r 重新启动系统</li>
+<li>-h 关闭系统</li>
+<li>-c 取消运行shutdown</li>
+</ol>
+<h4 id="halt">halt:</h4>
+<p>相当于 shutdown -h<br>
+<strong>sudo halt</strong></p>
+<ol>
+<li>-w 并不会关机，将关机信息写入到/var/log/wtmp文件中</li>
+<li>-d 关闭系统，不把记录写到/var/log/wtmp日志文件中</li>
+<li>-f 不调用shutdown而强制关闭系统</li>
+</ol>
+<h4 id="reboot">reboot:</h4>
+<p>重启<br>
+<strong>sudo reboot</strong></p>
+<ol>
+<li>-w 并不会真正重启系统，将重启信息写入到/var/log/wtmp文件中</li>
+<li>-d 重启系统，不把记录写到/var/log/wtmp日志文件中</li>
+<li>-f 不调用shutdown而强制重启系统<br>
+ </li>
+</ol>
+<hr>
+<h2 id="命令语法规则：">命令语法规则：</h2>
+<h4 id="命令自动补全：tab">命令自动补全：tab</h4>
+<h4 id="历史命令查看：history">历史命令查看：history</h4>
+<h4 id="命令替换：-命令的参数可由令一个命令的接果来替代">命令替换： 命令的参数可由令一个命令的接果来替代</h4>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">kill</span> <span class="hljs-variable">$</span>(pidof less)  <br><span class="hljs-built_in">kill</span> <span class="hljs-string">&#x27;pidof less&#x27;</span><br></code></pre></td></tr></table></figure>
+<h4 id="命令别名：-alias">命令别名： alias</h4>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">alias</span> <span class="hljs-keyword">work</span> = &quot;cd /home/user/program/cplus&quot;<br>unalias <span class="hljs-keyword">work</span><br></code></pre></td></tr></table></figure>
+<p> </p>
+<hr>
+<h2 id="软件安装">软件安装</h2>
+<h4 id="dpkg-Debian-Package">dpkg(Debian Package)</h4>
+<ol>
+<li>-i 安装软件(install)</li>
+<li>-R 安装一个目录下面所有的软件包(Regressive)</li>
+<li>-r 删除软件包，但保存其配置信息(remove)</li>
+<li>-L 查看软件安装文件所在位置(Location)</li>
+</ol>
+<h4 id="apt-Advanced-Packaging-Tool">apt(Advanced Packaging Tool)</h4>
+<ol>
+<li>apt-get install 安装包</li>
+<li>apt-get reinstall 重新安装包</li>
+<li>apt-get -f install 修复安装</li>
+<li>apt-get remove 删除包</li>
+<li>apt-get autoremove 删除包及其依赖</li>
+<li>apt-get upgrade 更新已安装的包</li>
+</ol>
+<h2 id="目录与文件">目录与文件</h2>
+<br/>
+<h3 id="更改工作目录：cd">更改工作目录：cd</h3>
+<ol>
+<li>cd … 转到当前目录的上层目录</li>
+<li>cd ~ 转到当前用户的家目录</li>
+<li>cd …/…/ 转到当前目录的上上层目录</li>
+<li>pwd 显示当前工作目录</li>
+</ol>
+<br/>
+<h3 id="目录与文件查看-ls">目录与文件查看: ls</h3>
+<ol>
+<li>-l 以长格式形式显示</li>
+<li>-a 显示所有文件或目录，包括隐藏文件</li>
+<li>-i 显示文件索引信息，也就是文件的inode号</li>
+<li>-d 列出目录</li>
+</ol>
+<br/>
+<h3 id="创建工作目录-mkdir">创建工作目录: mkdir</h3>
+<ol>
+<li>-m 指定所有用户对新建目录的权限</li>
+<li>-p 可以强制创建多层目录</li>
+</ol>
+<br/>
+<h3 id="创建空文件-touch">创建空文件: touch</h3>
+<br/>
+<h3 id="创建文件并写入内容-cat">创建文件并写入内容: cat</h3>
+<p><code>cat &gt; file</code> 输入内容 ctrl+c</p>
+<p><code>cat file</code> 查看是否创建成功</p>
+<br/>
+<h3 id="向文件中写入内容-echo-hello-world-file">向文件中写入内容: echo hello world &gt; file</h3>
+<br/>
+<h3 id="复制文件或目录-cp">复制文件或目录: cp</h3>
+<p>-r 递归复制</p>
+<p>复制文件file1到/tmp中并重命名尾file2</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">cp file1 <span class="hljs-regexp">/tmp/</span>file2<br></code></pre></td></tr></table></figure>
+<p>复制/root/file1到/tmp中并重命名为file2</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">cp <span class="hljs-regexp">/root/</span>file1 <span class="hljs-regexp">/tmp/</span>file2<br></code></pre></td></tr></table></figure>
+<p>复制当前目录下以.bak结尾的文件到/tmp中</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cp</span>*.bak /tmp<br></code></pre></td></tr></table></figure>
+<br/>
+<h3 id="更改文件或目录名称-mv">更改文件或目录名称: mv</h3>
+<p>将/tmp目录下的pic重命名为pic2</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">mv <span class="hljs-regexp">/tmp/</span>pic <span class="hljs-regexp">/tmp/</span>pic2<br></code></pre></td></tr></table></figure>
+<br/>
+<h3 id="目录与文件移动-mv">目录与文件移动: mv</h3>
+<p>将pic目录下的所有以png结尾的文件移动到/usr/local/share/pic下</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">mv <span class="hljs-regexp">/tmp/</span>pic<span class="hljs-regexp">/*.png /u</span>sr<span class="hljs-regexp">/local/</span>share/pic<br></code></pre></td></tr></table></figure>
+<br/>
+<h3 id="删除文件或目录-rm">删除文件或目录: rm</h3>
+<ol>
+<li>-r 递归删除，可以删除目录下的文件或目录</li>
+<li>-f 删除文件时不提醒而强制删除</li>
+<li>rmdir 只能删除空目录</li>
+</ol>
+<p>删除文件名中包含字符4且以 .bak结尾的文件</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">rm</span> *<span class="hljs-number">4</span><span class="hljs-regexp">*.bak</span><br></code></pre></td></tr></table></figure>
+<p>删除当前目录下扩展名有四个字符的文件</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ruby">rm *.<span class="hljs-string">??</span><span class="hljs-string">??</span><br></code></pre></td></tr></table></figure>
+<p>删除文件首字母为a,b或c，且扩展名为.txt的文件</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">rm</span> [abc]<span class="hljs-regexp">*.txt</span><br></code></pre></td></tr></table></figure>
+<p>删除文件名为数字字符开头，且文件扩展名为两个字符的文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">rm</span> [0-9]*.??<br></code></pre></td></tr></table></figure>
+<br/>
+<h3 id="文件详细信息-stat">文件详细信息: stat</h3>
+<hr>
+<p></p>
+<h2 id="文件权限及内容显示">文件权限及内容显示</h2>
+<br/>
+<h3 id="文件权限-chmod">文件权限: chmod</h3>
+<p>用户分类： 文件拥有者(user)、同组用户(group)、其他用户(others)<br>
+三种权限： 读®、写(w)、执行(x)</p>
+<br/>
+<h4 id="字符设定法">字符设定法</h4>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs excel">语法：chmod [who] [+ | - | =] [<span class="hljs-built_in">mode</span>] 文件名<br>说明：[who]可是下述字符中的一个或它们的组合：<br>u（user）：表示“用户”，即文件或目录的所有者<br>g（group）：表示“同组用户”<br>o（others）：表示“其他用户”<br>a（all）：表示“所有用户”<br>[+ | - | =] ：+表示添加某个权限；-表示取消某个权限；<br>=表示赋予给定权限<br>[<span class="hljs-built_in">mode</span>]：r(可读)、w(可写)、x(可执行)<br></code></pre></td></tr></table></figure>
+<p>设定文件test1的属性为：文件属主（u）增加执行权限，与文件属主同组用户（g）增加执行权限，其他用户（o）增加执行权限</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">chmod</span> a+x test1<br></code></pre></td></tr></table></figure>
+<p>设定文件test2的属性为：文件属主（u）增加写权限，与文件属主同组用户（g）增加写权限，其他用户（o）删除写、执行权限</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">chmod</span> ug+w,o-wx test2<br></code></pre></td></tr></table></figure>
+<p>删除文件test3的执行权限，以下三个命令均可</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">chmod</span> a-x test3<br><span class="hljs-built_in">chmod</span> -x test3<br><span class="hljs-built_in">chmod</span> ugo-x test3<br></code></pre></td></tr></table></figure>
+<p>把文件test4的执行权限改为rwxrw-rw-</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">chmod <span class="hljs-attribute">u</span>=rwx,g=rw,o=rw test4<br></code></pre></td></tr></table></figure>
+<br/>
+<p>###数值设定法 -&gt; 数值计算： r:4, w:2, x:1</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">chmod</span> 数值 文件名<br></code></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs routeros">数值计算：若权限为[-rwxrw----]<br><span class="hljs-attribute">ower</span>=rwx=(111)2=4+2+1=7 <br><span class="hljs-attribute">group</span>=rw-=(110)2=4+2+0=6<br><span class="hljs-attribute">others</span>=---=(000)2=0<br>理解： mode可分为3个8进制数字，将每个8进制数字转化为2进制数字，1对应的赋予相应的权限，0对应的取消相应的权限<br></code></pre></td></tr></table></figure>
+<p>设定文件aaa的属性为文件属主（u）拥有读、写权限，与文件属主同组用户（g）拥有读权限，其他人（o）拥有读权限</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">chmod</span> <span class="hljs-number">644</span> aaa<br></code></pre></td></tr></table></figure>
+<p>设定bbb这个文件的属性为：文件属主（u）可读/可写/可执行权，与文件属主同组用户（g）可读/可执行权，其他人（o）没有任何权限</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">chmod</span> <span class="hljs-number">750</span> bbb<br></code></pre></td></tr></table></figure>
+<h3 id="文件内容显示">文件内容显示</h3>
+<h4 id="cat-查看文件，在屏幕上显示文件内容">cat: 查看文件，在屏幕上显示文件内容</h4>
+<ol>
+<li>-n 显示出行号</li>
+<li>-A 显示文件中所有字符，包括隐藏字符</li>
+</ol>
+<br/>
+<h4 id="more-分页显示文件内容">more: 分页显示文件内容</h4>
+<p><strong>读完文件再显示</strong>；按住空格往前翻； <code>ctrl+f</code> 往前翻页；  <code>ctrl+b</code> 往后翻页；按q键退出所有查看的文件</p>
+<br/>
+<h4 id="less-分页显示文件内容">less: 分页显示文件内容</h4>
+<p><strong>边读边显示，启动快</strong>；按住空格往前翻； <code>ctrl+f</code> 往前翻页；  <code>ctrl+b</code> 往后翻页；按q键退出所有查看的文件；less扩展了more命令的功能</p>
+<br/>
+<h4 id="head-查看文件头几行数据；了解文件中数据模式">head: 查看文件头几行数据；了解文件中数据模式</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">head</span> -n 15 <span class="hljs-built_in">test</span> //查看<span class="hljs-built_in">test</span>文件的前15行<br><span class="hljs-built_in">head</span> <span class="hljs-built_in">test</span> //默认输出前10行<br></code></pre></td></tr></table></figure>
+<br/>
+<h4 id="tail：-查看文件末尾数据；多用于查看系统日志">tail： 查看文件末尾数据；多用于查看系统日志</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">tail</span> -n 15 <span class="hljs-built_in">test</span> //查看<span class="hljs-built_in">test</span>文件的末尾15行<br><span class="hljs-built_in">tail</span> <span class="hljs-built_in">test</span> //默认输出末尾10行<br></code></pre></td></tr></table></figure>
+<h2 id="管道">管道: |</h2>
+<p>查看/etc目录下的文件，并将结果分页显示</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">ls</span> /etc | more<br></code></pre></td></tr></table></figure>
+<p>查看系统中已安装软件中软件名包含字符’a’的所有软件，输出结果分页显示</p>
+<figure class="highlight smalltalk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs smalltalk">dpkg -l | grep a | more<br></code></pre></td></tr></table></figure>
+<h2 id="数据流">数据流</h2>
+<p>标准输入(stdin)，标准输出(stdout)，标准错误输出(stderr)</p>
+<ol>
+<li><code>/dev/stdin</code> 标准输入 <code>0</code></li>
+<li><code>/dev/stdout</code> 标准输出 <code>1</code></li>
+<li><code>/dev/stderr</code> 标准错误输出 <code>2</code></li>
+</ol>
+<h3 id="数据流重定向">数据流重定向</h3>
+<h4 id="输出重定向">输出重定向</h4>
+<p><img src="https://uploadfiles.nowcoder.com/images/20210320/369118006_1616226631099/4D94653967AF1C5CDB3E74A0480E6419" srcset="/img/loading.gif" lazyload alt="图片说明" title="图片标题"></p>
+<p>以长格式形式列出/etc目录下文件信息，并将其重定向到文件right中</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs vim"><span class="hljs-keyword">ls</span> -<span class="hljs-keyword">l</span> /etc &gt; <span class="hljs-keyword">right</span><br><span class="hljs-keyword">ls</span> -<span class="hljs-keyword">l</span> <span class="hljs-keyword">right</span> &lt;=查看新建文件<br></code></pre></td></tr></table></figure>
+<p>查看计算机网卡信息并将结果输出到文件right中</p>
+<figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs coq">ifconfig &gt;&gt; <span class="hljs-built_in">right</span><br></code></pre></td></tr></table></figure>
+<p>命令运行正确时重定向到right,出错时重定向到error</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">ls</span> -l /etca &gt;right 2&gt;error<br></code></pre></td></tr></table></figure>
+<p>特殊用法：<br>
+<img src="https://uploadfiles.nowcoder.com/images/20210320/369118006_1616227227623/D0569403B285BDACCEA0F87EED480350" srcset="/img/loading.gif" lazyload alt="图片说明" title="图片标题"></p>
+<p>将ls命令运行结果重定向到right_error （覆盖）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">ls</span> -l /etc &gt;right_error 2&gt;&amp;1<br><span class="hljs-built_in">ls</span> -l /etc &amp;&gt;right_error<br></code></pre></td></tr></table></figure>
+<p>将ls命令运行结果重定向到right_error （追加）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">ls</span> -l /etc &gt;&gt;right_error 2&gt;&amp;1<br><span class="hljs-built_in">ls</span> -l /etc &amp;&gt;&gt;right_error<br></code></pre></td></tr></table></figure>
+<h4 id="输入重定向-wc">输入重定向: wc</h4>
+<ol>
+<li>-l 统计行数</li>
+<li>-w 统计单词数</li>
+<li>-c 统计字节数<br>
+统计文件test的行数、单词数以及字节数</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">wc</span> &lt; <span class="hljs-built_in">test</span><br></code></pre></td></tr></table></figure>
+<h2 id="文本处理">文本处理</h2>
+<h3 id="文本排序-sort-字典顺序">文本排序 sort(字典顺序)</h3>
+<ol>
+<li>-n 按数值大小排序</li>
+<li>-u 对排序后相同的行只保留一行</li>
+<li>-r 按逆序输出排序结果</li>
+</ol>
+<p>对文件file1以倒序形式排序并显示在屏幕上</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">sort</span> –<span class="hljs-built_in">r</span> file1或 <span class="hljs-built_in">cat</span> file1 | <span class="hljs-built_in">sort</span> <span class="hljs-literal">-r</span><br></code></pre></td></tr></table></figure>
+<p>对文件file1排序并删掉重复的行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sort</span> –u file1   或 <span class="hljs-built_in">cat</span> file1 | <span class="hljs-built_in">sort</span> -u<br></code></pre></td></tr></table></figure>
+<p>对数值文件file2按数值从小到大进行排序</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sort</span> –n file2 或 <span class="hljs-built_in">cat</span> file2 | <span class="hljs-built_in">sort</span> -n<br></code></pre></td></tr></table></figure>
+<h3 id="文本去重-uniq">文本去重 uniq</h3>
+<ol>
+<li>-d 只显示重复行</li>
+<li>-u 只显示不重复行</li>
+<li>-c 显示重复出现的次数</li>
+</ol>
+<p>使用uniq命令对文件file1去重后输出</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sort</span>  file1 | <span class="hljs-built_in">uniq</span><br></code></pre></td></tr></table></figure>
+<p>查看文件file1中重复的数据内容</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sort</span>  file1 | <span class="hljs-built_in">uniq</span> -d<br></code></pre></td></tr></table></figure>
+<p>查看文件file1中不重复的数据内容</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sort</span>  file1 | <span class="hljs-built_in">uniq</span> -u 来显示当前工作目录的<br></code></pre></td></tr></table></figure>
+<h3 id="文本查找-grep">文本查找 grep</h3>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">grep <span class="hljs-selector-attr">[选项]</span> <span class="hljs-selector-attr">[字符串]</span> 文件名<br></code></pre></td></tr></table></figure>
+<ol>
+<li>-c 只显示匹配的行数</li>
+<li>-l 忽略字母大小写</li>
+<li>-n 输出时加行号</li>
+<li>-v 反转查找</li>
+</ol>
+<p>在/etc/adduser.conf文件中，查找含有adduser字符的行</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gradle"><span class="hljs-keyword">grep</span> adduser <span class="hljs-regexp">/etc/</span>adduser.conf<br></code></pre></td></tr></table></figure>
+<p>在adduser.conf文件中，查找不含&quot;#&quot;的行并列出行号</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gradle"><span class="hljs-keyword">grep</span> -vn <span class="hljs-string">&quot;#&quot;</span> <span class="hljs-regexp">/etc/</span>adduser.conf<br></code></pre></td></tr></table></figure>
+<p>在adduser.conf文件中，查找含有adduser字符的行数</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gradle"><span class="hljs-keyword">grep</span> -c  adduser  <span class="hljs-regexp">/etc/</span>adduser.conf<br></code></pre></td></tr></table></figure>
+<p>##文本剪切 cut</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mathematica"><span class="hljs-variable">cut</span> <span class="hljs-operator">-</span><span class="hljs-variable">f</span> <span class="hljs-built_in">List</span> <span class="hljs-operator">-</span><span class="hljs-variable">d</span> <span class="hljs-built_in">Character</span> 文件<br></code></pre></td></tr></table></figure>
+<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs autohotkey">-f 获取被定界符隔开后指定的字段列表 `f代表field`<br> -d 指定分隔字符 `d代表delimeter`<br></code></pre></td></tr></table></figure>
+<p><img src="https://uploadfiles.nowcoder.com/images/20210322/369118006_1616421511145/9A0C1B38D99D7EB1E8AA3DBA396CB981" srcset="/img/loading.gif" lazyload alt="图片说明" title="图片标题"></p>
+<h3 id="文本比较-diff">文本比较 diff</h3>
+<ol>
+<li>-c 以context模式显示比较的结果，相对normal</li>
+<li>-y 以并列的方式显示文件的异同之处</li>
+<li>-w 与选项-y一起使用，指定列宽</li>
+</ol>
+<h4 id="diff命令–context模式">diff命令–context模式</h4>
+<br />
+<h2 id="文件查找">文件查找</h2>
+<h4 id="find-在硬盘上查找文件或目录"><code>find</code> 在硬盘上查找文件或目录</h4>
+<p>在当前目录下，查找属于user01用户的文件和目录</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">find . -<span class="hljs-keyword">user</span> <span class="hljs-title">user01</span><br></code></pre></td></tr></table></figure>
+<p>查找当前目录及其子目录下所有最近2天内更新过的文件</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-built_in">find</span> . -ctime -2<br></code></pre></td></tr></table></figure>
+<h4 id="locate-后台数据库中按文件名搜索"><code>locate</code> 后台数据库中按文件名搜索</h4>
+<p>-n 显示查找结果的个数</p>
+<p>查找前3个文件passwd所在位置</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">locate</span> -n <span class="hljs-number">3</span> passwd<br></code></pre></td></tr></table></figure>
+<ol>
+<li>对于刚建立的文件，立即使用locate进行查找将会搜索不到所创建的文件，因为后台数据库一天更新一次；</li>
+<li>若想使刚创建的文件能被立即搜索到，必须以root登陆，然后运行updatedb命令更新数据库。</li>
+</ol>
+<h4 id="查找指定文件位置-whereis">查找指定文件位置: whereis</h4>
+<ol>
+<li>-b 只查找二进制文件</li>
+<li>-m 只查找说明文件</li>
+<li>-s 只查找源代码文件</li>
+</ol>
+<br />
+<h2 id="文件压缩">文件压缩</h2>
+<h4 id="gzip">gzip</h4>
+<ol>
+<li>-c 将输出写到标准输出上，并保留原有文件</li>
+<li>-d 将压缩文件解压</li>
+<li>-r 递归式地查找指定目录并压缩，解压缩</li>
+</ol>
+<p>用gzip命令将/home/lisi目录下的文件压缩</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs clean">## gzip /home/lisi<span class="hljs-comment">/*</span><br></code></pre></td></tr></table></figure>
+<p>用命令将/home/lisi目录下所有的.gz文件解压缩</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment"># gzip -d /home/lisi/*</span></span><br><span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment"># gunzip /home/lisi/*</span></span><br></code></pre></td></tr></table></figure>
+<h4 id="bzip2-压缩效果略好于gzip">bzip2(压缩效果略好于gzip)</h4>
+<ol>
+<li>-d 解压缩选项</li>
+<li>-v 显示压缩或解压缩的过程</li>
+<li>-f 当文件重名时，进行覆盖</li>
+</ol>
+<p>使用bzip2命令压缩/home/lisi/目录下的文件</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs clean">## bzip2 /home/lisi<span class="hljs-comment">/*</span><br></code></pre></td></tr></table></figure>
+<p>使用bzip2命令解压缩/home/lisi/目录下的文件</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs clean">## bzip2 -d /home/lisi<span class="hljs-comment">/*</span><br></code></pre></td></tr></table></figure>
+<h4 id="tar包">tar包</h4>
+<p>将多个文件或目录打包成一个文件</p>
+<ol>
+<li>-z 用**<code>gzip</code>**命令进行压缩/解压缩</li>
+<li>-j 通过**<code>bzip2</code>**命令进行压缩/解压缩</li>
+<li>-C 指定解压目录</li>
+<li>-c (压缩)创建新的备份文件，备份目录或文件时必选项(压缩)</li>
+<li>-f 对普通文件进行操作（必选）</li>
+<li>-r 向备份档文件追加文件</li>
+<li>-x (解压缩)从备份档文件中解出文件</li>
+<li>-t 列出备份文档中所含的文件</li>
+<li>-v 列出处理过程中的详细信息</li>
+</ol>
+<br />
+<p>把/boot目录下文件和子目录打包，打包文件名为usr.tar</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs clean">## tar -cvf usr.tar /boot<br></code></pre></td></tr></table></figure>
+<p>把/boot目录下文件和子目录打包，并用gzip算法进行压缩，文件名为usr.tar.gz</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs clean">## tar -zcvf usr.tar.gz /boot<br></code></pre></td></tr></table></figure>
+<p>把usr.tar.gz这个打包文件还原并解压缩</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs clean">## tar -zxvf usr.tar.gz<br></code></pre></td></tr></table></figure>
+<p>把/boot目录下的文件和子目录打包，并用bzip2算法进行压缩，文件名为usr.tar.bz2</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs clean">## tar -jcvf /boot usr.tar.bz2<br></code></pre></td></tr></table></figure>
+<p>把usr.tar.bz2解压缩到目录/tmp</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs clean">## tar -jxvf usr.tar.bz2 -C /tmp<br></code></pre></td></tr></table></figure>
+<p>查看usr.tar备份文件的内容，并显示在显示器上</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs clean">## tar -tvf usr.tar<br></code></pre></td></tr></table></figure>
+<p>将文件/root/abc/d添加到usr.tar包里面去</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs clean">## tar -rvf usr.tar /root/abc/d<br></code></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/greamrod/p/12488346.html">tar参考</a></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Linux/" class="category-chain-item">Linux</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Linux/">#Linux</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Ubuntu基本操作</div>
+      <div>https://rubyrose-tat.github.io/2023/03/20/Linux基本操作/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>RubyRose</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年3月20日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
+                    <i class="iconfont icon-nc"></i>
+                  </span>
+                </a>
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                    <i class="iconfont icon-sa"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/03/20/Linux-shell%E8%84%9A%E6%9C%AC%E7%A8%8B%E5%BA%8F/" title="shell脚本程序">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">shell脚本程序</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/03/20/Linux-vi%E7%BC%96%E8%BE%91%E5%99%A8/" title="vi编辑器">
+                        <span class="hidden-mobile">vi编辑器</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"nGTrSnPlPtwXIU0lsbUWeSxn-MdYXbMMI","appKey":"fiCsW7XMGdSKj860M3ZLpsa4","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"https://ngtrsnpl.api.lncldglobal.com","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+    <!-- 添加网站运行时间 -->
+    <div>
+      <span id="timeDate">载入天数...</span>
+      <span id="times">载入时分秒...</span>
+    </div>
+  
+  
+    <!-- 统计访问量信息 -->
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="/js/Sakura.js"></script>
+<script src="/js/FunnyTitle.js"></script>
+<script src="//cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js"></script>
+<script src="//cdn.jsdelivr.net/combine/gh/dylanNew/live2d/webgl/Live2D/lib/live2d.min.js,npm/pixi.js@6.5.2/dist/browser/pixi.min.js,npm/pixi-live2d-display/dist/index.min.js,gh/Weidows-projects/Live2dLoader/dist/Live2dLoader.min.js"></script>
+<script src="/js/live2d.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+  
+  <!--动态线条背景-->
+  <!-- <script type="text/javascript"
+  color="0,0,0" opacity='0.7' zIndex="-2" count="100" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+  </script> -->
+
+  <!-- 音乐播放器 -->
+  <link rel="stylesheet" href="/dist/APlayer.min.css">
+  <div id="aplayer"></div>
+  <script type="text/javascript" src="/dist/APlayer.min.js"></script>
+  <script type="text/javascript" src="/dist/music.js"></script>
+
+  <!-- 建站时间 -->
+  <script type="text/javascript" src="/js/time.js"></script>
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

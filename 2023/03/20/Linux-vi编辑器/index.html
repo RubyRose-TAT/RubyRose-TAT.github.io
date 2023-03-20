@@ -18,19 +18,24 @@
   <meta name="author" content="RubyRose">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="website">
-<meta property="og:title" content="关于">
-<meta property="og:url" content="https://rubyrose-tat.github.io/about/index.html">
+    <meta name="description" content="vi编辑器基本操作">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vi编辑器">
+<meta property="og:url" content="https://rubyrose-tat.github.io/2023/03/20/Linux-vi%E7%BC%96%E8%BE%91%E5%99%A8/index.html">
 <meta property="og:site_name" content="RubyRose">
+<meta property="og:description" content="vi编辑器基本操作">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-03-20T13:55:28.470Z">
-<meta property="article:modified_time" content="2023-03-20T13:55:28.470Z">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20210419/369118006_1618825411496/25EA65C2A1DB93363CD580B664ABB0CB">
+<meta property="article:published_time" content="2023-03-20T13:00:00.000Z">
+<meta property="article:modified_time" content="2023-03-20T15:00:53.185Z">
 <meta property="article:author" content="RubyRose">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://uploadfiles.nowcoder.com/images/20210419/369118006_1618825411496/25EA65C2A1DB93363CD580B664ABB0CB">
   
   
   
-  <title>关于 - RubyRose</title>
+  <title>vi编辑器 - RubyRose</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -124,7 +129,7 @@
   <header>
     
 
-<div class="header-inner" style="height: 60vh;">
+<div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -242,9 +247,57 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="关于"></span>
+            <span id="subtitle" data-typed-text="vi编辑器"></span>
           
         </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-03-20 21:00" pubdate>
+          2023年3月20日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          833 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          7 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
 
         
       </div>
@@ -260,89 +313,269 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div id="board"
-          >
-          
-            <div class="about-avatar">
-              <img src="/img/avatar.jpg" srcset="/img/loading.gif" lazyload class="img-fluid" alt="avatar">
-            </div>
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
+      
 
-<div class="text-center">
-  <div class="about-info">
-    <div class="about-name">RubyRose</div>
-    <div class="about-intro">EMT！</div>
-    <div class="about-icons">
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
       
-        
-        
-        
-        <a href=https://github.com/RubyRose-TAT class="
-           hint--bottom hint--rounded"
-           aria-label=GitHub
-           target="_blank"
-        >
-          <i class="iconfont icon-github-fill" aria-hidden="true"></i>
-          
-        </a>
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">vi编辑器</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：2023年3月20日 晚上
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="vi编辑器三种模式">vi编辑器三种模式</h2>
+<h3 id="命令模式-Command-mode">命令模式 (Command mode)</h3>
+<p>通过在键盘上输入相关命令，实现控制屏幕光标的移动，删除字符或行的内容，撤销文本的修改，移动复制文本等功能，以及进入到插入模式或底线模式中。</p>
+<h3 id="插入模式-Insert-mode">插入模式 (Insert mode)</h3>
+<p>只有在插入模式下，才可以进行文本编辑。<br>
+在插入模式中，任何字符都将被当作文本输入到文件中。</p>
+<h3 id="底线模式-Last-Line-mode">底线模式 (Last Line mode)</h3>
+<p>主要进行一些文字编辑的辅助功能，比如字符串搜索，替换和保存文件等操作。</p>
+<h3 id="三种模式间转换">三种模式间转换</h3>
+<p><img src="https://uploadfiles.nowcoder.com/images/20210419/369118006_1618825411496/25EA65C2A1DB93363CD580B664ABB0CB" srcset="/img/loading.gif" lazyload alt="转换"></p>
+<hr>
+<p>#编辑一个文件<br>
+创建新文件，进入vi编辑器 <code>vi name</code><br>
+查看文件内容 <code>more name</code><br>
+回退:<code>N</code><br>
+结束:<code>q</code><br>
+撤销:<code>u</code><br>
+返回第一个文件<code>rew</code><br>
+设置行号: <code>:set nu</code><br>
+文件不存盘退出<code>:q!(:q)</code><br>
+文件存盘退出<code>:wq!(:wq)</code><br>
+文件不存盘退出查看内容，查看文件是否为只读内容文件<code>:ls -l name</code><br>
+文件存盘退出查看内容，在当前界面确认文件内容是否被修改<code>more name</code></p>
+<hr>
+<h2 id="移动光标">移动光标</h2>
+<p>数字键+方向键 <code>(kjhl)</code><br>
+<code>w</code>向前移动一单词，<code>b</code>向后移动一单词，<code>e</code>移动到本单词末尾<br>
+移动到行首: <code>^</code><br>
+移动到行尾: <code>＄</code>  <code>2＄(第二行行尾)</code></p>
+<hr>
+<h2 id="添加文本">添加文本</h2>
+<p>在光标上方插入: <code>O</code><br>
+在光标下方插入: <code>o</code><br>
+在行首插入文本: <code>I</code><br>
+在行末插入文本: <code>A</code></p>
+<hr>
+<h2 id="查找字符串">查找字符串</h2>
+<p>向前查找字符串: /…(N)<br>
+向后查找字符串: /…(n)</p>
+<hr>
+<h2 id="字符替换">字符替换</h2>
+<p>单个字符替换: <code>r</code><br>
+逐字符覆盖文本: <code>R</code><br>
+对单词替换: <code>cw</code><br>
+<strong>替换字符串</strong>: <code>[range]s/s1/s2/ [option]</code></p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs crystal">[range] 表示检索范围，省略时表示当前行<br><span class="hljs-number">1</span>,<span class="hljs-number">10</span>表示从第<span class="hljs-number">1</span>行到<span class="hljs-number">10</span>行<br>%表示整个文件，同<span class="hljs-number">1</span>,<span class="hljs-variable">$</span><br><span class="hljs-variable"></span> ,<span class="hljs-variable">$从</span>当前行到文件尾<br><br>s 为替换命令<br>s1 要被替换的串，s2 为替换的串<br><br>option 表示选项：<br><span class="hljs-regexp">/g表示在全局文件中进行替换</span><br><span class="hljs-regexp">/c</span>表示在每次替换之前需要用户进行确认<br>省略时仅对每行第一个匹配串进行替换<br></code></pre></td></tr></table></figure>
+<hr>
+<h2 id="文本复制，剪切，粘贴">文本复制，剪切，粘贴</h2>
+<p>复制单词: <code>yl</code><br>
+复制一行: <code>yy</code><br>
+粘贴: <code>p</code><br>
+剪切: <code>x</code><br>
+复制指定字符: <code>yfy</code> <code>（此处y是所指选择单词January的最后一个字符）</code><br>
+剪切指定字符: <code>Dfy</code><br>
+复制单词: <code>yw</code> <code>2yw</code><br>
+剪切单词: <code>dw</code></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
       
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
         
-        
-        
-        <a href=https://space.bilibili.com class="
-           hint--bottom hint--rounded"
-           aria-label=bilibili
-           target="_blank"
-        >
-          <i class="iconfont icon-bilibili" aria-hidden="true"></i>
-          
-        </a>
+  <a href="/categories/Linux/" class="category-chain-item">Linux</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
       
-        
-        
-        
-        <a  class="qr-trigger
-           "
-           
-           target="_self"
-        >
-          <i class="iconfont icon-wechat-fill" aria-hidden="true"></i>
-          
-            <img class="qr-img" src="/img/%E5%BE%AE%E4%BF%A1.JPG" srcset="/img/loading.gif" lazyload alt="qrcode" />
-          
-        </a>
+        <a href="/tags/Linux/">#Linux</a>
       
-        
-        
-        
-        <a  class="qr-trigger
-           "
-           
-           target="_self"
-        >
-          <i class="iconfont icon-alipay-fill" aria-hidden="true"></i>
-          
-            <img class="qr-img" src="/img/%E6%94%AF%E4%BB%98%E5%AE%9D.JPG" srcset="/img/loading.gif" lazyload alt="qrcode" />
-          
-        </a>
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>vi编辑器</div>
+      <div>https://rubyrose-tat.github.io/2023/03/20/Linux-vi编辑器/</div>
+    </div>
+    <div class="license-meta">
       
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>RubyRose</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年3月20日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
+                    <i class="iconfont icon-nc"></i>
+                  </span>
+                </a>
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                    <i class="iconfont icon-sa"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/03/20/Linux%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" title="Ubuntu基本操作">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Ubuntu基本操作</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/03/20/%E5%A4%A7%E6%95%B0%E6%8D%AEhadoop%E5%91%BD%E4%BB%A4/" title="hadoop命令">
+                        <span class="hidden-mobile">hadoop命令</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"nGTrSnPlPtwXIU0lsbUWeSxn-MdYXbMMI","appKey":"fiCsW7XMGdSKj860M3ZLpsa4","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"https://ngtrsnpl.api.lncldglobal.com","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
     </div>
   </div>
 </div>
 
-<article class="about-content page-content mt-5">
-  <div class="markdown-body">
-    
-  </div>
-
-  
-</article>
-
 
 
 
@@ -366,11 +599,8 @@
 
 
 
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
+
     
 
     
@@ -494,6 +724,46 @@
   
 
 
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
 
 
   <script>Fluid.plugins.codeWidget();</script>

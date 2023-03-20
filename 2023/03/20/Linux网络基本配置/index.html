@@ -18,21 +18,22 @@
   <meta name="author" content="RubyRose">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="description" content="常用网络配置文件 12345&#x2F;etc&#x2F;network&#x2F;interfaces文件——&gt;静态IP地址配置&#x2F;etc&#x2F;resolv.conf文件&#x2F;etc&#x2F;hosts文件&#x2F;etc&#x2F;services文件&#x2F;etc&#x2F;hostname 文件——&gt;修改主机名 常用网络命令 12345ifconfig  ——&gt;查看IP地址ip addr   ——&gt;查看IP地址ping      ——&gt;测试">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://rubyrose-tat.github.io/2023/03/15/hello-world/index.html">
+<meta property="og:title" content="Linux网络基本配置">
+<meta property="og:url" content="https://rubyrose-tat.github.io/2023/03/20/Linux%E7%BD%91%E7%BB%9C%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="RubyRose">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="常用网络配置文件 12345&#x2F;etc&#x2F;network&#x2F;interfaces文件——&gt;静态IP地址配置&#x2F;etc&#x2F;resolv.conf文件&#x2F;etc&#x2F;hosts文件&#x2F;etc&#x2F;services文件&#x2F;etc&#x2F;hostname 文件——&gt;修改主机名 常用网络命令 12345ifconfig  ——&gt;查看IP地址ip addr   ——&gt;查看IP地址ping      ——&gt;测试">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-03-15T07:24:28.674Z">
-<meta property="article:modified_time" content="2023-03-15T07:24:28.675Z">
+<meta property="article:published_time" content="2023-03-20T11:00:00.000Z">
+<meta property="article:modified_time" content="2023-03-20T15:12:40.697Z">
 <meta property="article:author" content="RubyRose">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Hello World - RubyRose</title>
+  <title>Linux网络基本配置 - RubyRose</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -41,8 +42,6 @@
   <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
 
 
@@ -75,7 +74,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"rubyrose-tat.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"ebaa328905b91cf015619fb082f56f3c","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"nGTrSnPlPtwXIU0lsbUWeSxn-MdYXbMMI","app_key":"fiCsW7XMGdSKj860M3ZLpsa4","server_url":"https://ngtrsnpl.api.lncldglobal.com","path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"rubyrose-tat.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":false,"image_caption":{"enable":true},"image_zoom":{"enable":false,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":2},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"ebaa328905b91cf015619fb082f56f3c","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"nGTrSnPlPtwXIU0lsbUWeSxn-MdYXbMMI","app_key":"fiCsW7XMGdSKj860M3ZLpsa4","server_url":"https://ngtrsnpl.api.lncldglobal.com","path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -162,9 +161,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/">
-                <i class="iconfont icon-archive-fill"></i>
-                <span>归档</span>
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
               </a>
             </li>
           
@@ -174,9 +173,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/">
-                <i class="iconfont icon-category-fill"></i>
-                <span>分类</span>
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
               </a>
             </li>
           
@@ -201,6 +200,18 @@
               <a class="nav-link" href="/bangumis/">
                 <i class="iconfont icon-bilibili-fill"></i>
                 <span>番剧</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
               </a>
             </li>
           
@@ -234,7 +245,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Hello World"></span>
+            <span id="subtitle" data-typed-text="Linux网络基本配置"></span>
           
         </div>
 
@@ -245,8 +256,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-03-15 15:24" pubdate>
-          2023年3月15日 下午
+        <time datetime="2023-03-20 19:00" pubdate>
+          2023年3月20日 晚上
         </time>
       </span>
     
@@ -257,7 +268,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          367 字
+          1.5k 字
         
       </span>
     
@@ -268,12 +279,20 @@
         
         
         
-          4 分钟
+          13 分钟
         
       </span>
     
 
     
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
     
   </div>
 
@@ -306,26 +325,65 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Hello World</h1>
+            <h1 style="display: none">Linux网络基本配置</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：2023年3月20日 晚上
+                  
+                
+              </p>
             
             
               <div class="markdown-body">
                 
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start">Quick Start</h2>
-<h3 id="Create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
+                <h2 id="常用网络配置文件">常用网络配置文件</h2>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-regexp">/etc/</span>network/interfaces文件——&gt;静态IP地址配置<br><span class="hljs-regexp">/etc/</span>resolv.conf文件<br><span class="hljs-regexp">/etc/</span>hosts文件<br><span class="hljs-regexp">/etc/</span>services文件<br><span class="hljs-regexp">/etc/</span>hostname 文件——&gt;修改主机名<br></code></pre></td></tr></table></figure>
+<h2 id="常用网络命令">常用网络命令</h2>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs armasm"><span class="hljs-symbol">ifconfig</span>  ——&gt;查看<span class="hljs-built_in">IP</span>地址<br><span class="hljs-symbol">ip</span> <span class="hljs-keyword">addr</span>   ——&gt;查看<span class="hljs-built_in">IP</span>地址<br><span class="hljs-symbol">ping</span>      ——&gt;测试与目的地的连通性<br><span class="hljs-symbol">traceroute</span> ——&gt;测试如何到达目的地<br><span class="hljs-symbol">netstat</span>   ——&gt;当前网络状态<br></code></pre></td></tr></table></figure>
+<h3 id="ifconfig命令">ifconfig命令</h3>
+<p>使用ifconfig命令可以显示和配置网络接口，比如设置IP地址、MAC地址、激活或关闭网络接口</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">ifconfig  <span class="hljs-selector-attr">[接口]</span> <span class="hljs-selector-attr">[选项|IP地址]</span> <br></code></pre></td></tr></table></figure>
+<p>配置网卡ens33的IP地址， 同时激活该设备</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">ifconfig</span> ens33 <span class="hljs-number">192.168.237.140</span> netmask <span class="hljs-number">255.255.255.0</span> up<br></code></pre></td></tr></table></figure>
+<p>配置网卡ens33别名设备ens33:1的IP地址</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">ifconfig</span> ens33:<span class="hljs-number">1</span> <span class="hljs-number">192.168.237.140</span><br></code></pre></td></tr></table></figure>
+<p>激活网卡ens33:1设备</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">ifconfig</span> ens33:<span class="hljs-number">1</span> up<br></code></pre></td></tr></table></figure>
+<p>查看网卡ens33网络接口的配置</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">ifconfig</span> ens33<br></code></pre></td></tr></table></figure>
+<p>查看所有的网卡网络接口配置</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">ifconfig</span> <br></code></pre></td></tr></table></figure>
+<h3 id="ping命令">ping命令</h3>
+<p>使用ping命令可用于测试与目标计算机之间的连通性</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">ping <span class="hljs-selector-attr">[选项]</span> <span class="hljs-selector-attr">[目标]</span><br></code></pre></td></tr></table></figure>
+<p>测试与网站www.sina.com.cn的连通性</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stylus">ping www<span class="hljs-selector-class">.sina</span><span class="hljs-selector-class">.com</span>.cn<br></code></pre></td></tr></table></figure>
+<p>测试与192.168.237.149计算机的连通性，每次发送的ICMP数据包大小为128字节(默认字节数为56)</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">ping</span> -s <span class="hljs-number">128</span> <span class="hljs-number">192.168.237.149</span><br></code></pre></td></tr></table></figure>
+<p>测试与192.168.237.149计算机的连通性，要求返回4个ICMP数据包</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">ping</span> -c <span class="hljs-number">4</span> <span class="hljs-number">192.168.237.149</span><br></code></pre></td></tr></table></figure>
+<h3 id="traceroute命令">traceroute命令</h3>
+<p>使用traceroute命令可以显示数据包到目标主机之间的路径</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">traceroute <span class="hljs-selector-attr">[选项]</span> <span class="hljs-selector-attr">[主机名|IP地址]</span> <span class="hljs-selector-attr">[数据包大小]</span><br></code></pre></td></tr></table></figure>
+<p>跟踪从本地计算机到www.163.com网站的路径</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">traceroute</span> www.<span class="hljs-number">163</span>.com<br></code></pre></td></tr></table></figure>
+<p>关闭网卡ens33设备</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">ifconfig</span> ens33 down<br></code></pre></td></tr></table></figure>
+<p>更改网卡ens33的硬件MAC地址为00:0C:29:18:2E:3D</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">ifconfig</span> ens33 hw ether <span class="hljs-number">00</span>:<span class="hljs-number">0</span>C:<span class="hljs-number">29</span>:<span class="hljs-number">18</span>:<span class="hljs-number">2</span>E:<span class="hljs-number">3</span>D<br></code></pre></td></tr></table></figure>
+<h3 id="netstat命令">netstat命令</h3>
+<p>使用netstat命令可显示网络状态信息，得知整个Linux系统的网络情况，比如网络连接、路由表、接口统计、伪装连接和组播成员</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">netstat <span class="hljs-selector-attr">[选项]</span> <span class="hljs-selector-attr">[延迟]</span><br></code></pre></td></tr></table></figure>
+<p>显示内核路由表信息</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">netstat -r</span><br></code></pre></td></tr></table></figure>
+<p>显示端口号为22的连接情况。</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs 1c">netstat -antu<span class="hljs-string">| grep 22</span><br></code></pre></td></tr></table></figure>
+<h2 id="管理网络服务">管理网络服务</h2>
+<p>管理Linux系统服务方法有很多，最常用的是systemctl命令，它是RHEL7（CentOS 7）系统中新的管理服务命令，用来替代chkconfig和service命令</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">systemctl <span class="hljs-selector-attr">[选项]</span> <span class="hljs-selector-attr">[单元命令|单元文件命令]</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight nsis"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs nsis"><span class="hljs-params">system</span>ctl start sshd.service<br><span class="hljs-params">system</span>ctl status sshd.service<br><span class="hljs-params">system</span>ctl stop sshd.service<br><span class="hljs-params">system</span>ctl restart sshd.service<br><span class="hljs-params">system</span>ctl reload sshd.service<br><span class="hljs-params">system</span>ctl enable sshd.service<br><span class="hljs-params">system</span>ctl is-enabled sshd.service<br><span class="hljs-params">system</span>ctl disable sshd.service<br></code></pre></td></tr></table></figure>
                 
               </div>
             
@@ -333,6 +391,34 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Linux/" class="category-chain-item">Linux</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Linux/">#Linux</a>
+      
+    </div>
   
 </div>
 
@@ -342,8 +428,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hello World</div>
-      <div>https://rubyrose-tat.github.io/2023/03/15/hello-world/</div>
+      <div>Linux网络基本配置</div>
+      <div>https://rubyrose-tat.github.io/2023/03/20/Linux网络基本配置/</div>
     </div>
     <div class="license-meta">
       
@@ -355,7 +441,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年3月15日</div>
+          <div>2023年3月20日</div>
         </div>
       
       
@@ -366,9 +452,21 @@
             
               
               
-                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
                   <span class="hint--top hint--rounded" aria-label="BY - 署名">
                     <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
+                    <i class="iconfont icon-nc"></i>
+                  </span>
+                </a>
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                    <i class="iconfont icon-sa"></i>
                   </span>
                 </a>
               
@@ -387,9 +485,21 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2023/03/20/Linux%E6%97%A5%E5%B8%B8%E7%AE%A1%E7%90%86%E4%B8%8E%E7%BB%B4%E6%8A%A4/" title="Linux日常管理与维护">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Linux日常管理与维护</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2023/03/20/Linux%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/" title="Linux进程管理">
+                        <span class="hidden-mobile">Linux进程管理</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
@@ -467,9 +577,6 @@
 
   
 
-
-
-  
 
 
 
@@ -646,8 +753,6 @@
 </script>
 
 
-  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
-
   <script>Fluid.plugins.codeWidget();</script>
 
 
@@ -685,14 +790,6 @@
         anchors.add(res.join(', '));
       }
     });
-  });
-</script>
-
-
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
-    Fluid.plugins.fancyBox();
   });
 </script>
 

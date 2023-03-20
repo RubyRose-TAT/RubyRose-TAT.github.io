@@ -65,7 +65,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"rubyrose-tat.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"ebaa328905b91cf015619fb082f56f3c","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"nGTrSnPlPtwXIU0lsbUWeSxn-MdYXbMMI","app_key":"fiCsW7XMGdSKj860M3ZLpsa4","server_url":"https://ngtrsnpl.api.lncldglobal.com","path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"rubyrose-tat.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":false,"image_caption":{"enable":true},"image_zoom":{"enable":false,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":2},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"ebaa328905b91cf015619fb082f56f3c","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"nGTrSnPlPtwXIU0lsbUWeSxn-MdYXbMMI","app_key":"fiCsW7XMGdSKj860M3ZLpsa4","server_url":"https://ngtrsnpl.api.lncldglobal.com","path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -152,9 +152,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/">
-                <i class="iconfont icon-archive-fill"></i>
-                <span>归档</span>
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
               </a>
             </li>
           
@@ -164,9 +164,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/">
-                <i class="iconfont icon-category-fill"></i>
-                <span>分类</span>
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
               </a>
             </li>
           
@@ -191,6 +191,18 @@
               <a class="nav-link" href="/bangumis/">
                 <i class="iconfont icon-bilibili-fill"></i>
                 <span>番剧</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
               </a>
             </li>
           
@@ -262,15 +274,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2023/03/15/hello-world/" target="_self">
-          Hello World
+        <a href="/2023/03/20/Linux-awk%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C%E5%B7%A5%E5%85%B7/" target="_self">
+          数据操作工具awk
         </a>
       </h1>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/03/15/hello-world/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/03/20/Linux-awk%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C%E5%B7%A5%E5%85%B7/" target="_self">
         <div>
-          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick
+          awk简介 一种便于使用且表达能力强的程序设计语言，适用于计算和数据处理任务 awk与sed区别 sed 适用于在shell程序中对文本内容进行增删改查等操作 awk 适用于计算和数据处理任务 awk命令语法 awk ‘BEGIN{ commands } pattern{ commands } END{ commands }’ awk命令运行过程  通过关键字BEGIN执行BEGIN后花括号{}后
         </div>
       </a>
 
@@ -278,11 +290,581 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2023-03-15 15:24" pubdate>
-              2023-03-15
+            <time datetime="2023-03-20 21:00" pubdate>
+              2023-03-20
             </time>
           </div>
         
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Linux/" class="category-chain-item">Linux</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Linux/">#Linux</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/03/20/Linux-sed%E6%B5%81%E5%BC%8F%E7%BC%96%E8%BE%91%E5%91%BD%E4%BB%A4/" target="_self">
+          流式编辑命令sed
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/03/20/Linux-sed%E6%B5%81%E5%BC%8F%E7%BC%96%E8%BE%91%E5%91%BD%E4%BB%A4/" target="_self">
+        <div>
+          sed简介  一种新型的，非交互式的编辑器（vi编辑器为交互式） 2.sed编辑器没有破坏性，它不会修改文件 3.默认输出到屏幕  sed工作过程 1.从文件中读入一行数据并把它保存在临时缓冲区中 2.处理临时缓冲区的内容，并将处理结果发送到显示器上 3.逐行处理文件所有内容直到最后一行 sed 命令语法 1sed [选项] ‘脚本’ 文件 选项 12345-n  使用安静模式-e  多重编辑选项
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-03-20 21:00" pubdate>
+              2023-03-20
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Linux/" class="category-chain-item">Linux</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Linux/">#Linux</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/03/20/Linux-shell%E8%84%9A%E6%9C%AC%E7%A8%8B%E5%BA%8F/" target="_self">
+          shell脚本程序
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/03/20/Linux-shell%E8%84%9A%E6%9C%AC%E7%A8%8B%E5%BA%8F/" target="_self">
+        <div>
+          shell脚本程序相关
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-03-20 21:00" pubdate>
+              2023-03-20
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Linux/" class="category-chain-item">Linux</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Linux/">#Linux</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/03/20/Linux%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" target="_self">
+          Ubuntu基本操作
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/03/20/Linux%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" target="_self">
+        <div>
+          Ubuntu关机命令： shutdown: sudo shutdown  -k 并不会关机，只发出警告信息给所以用户 -r 重新启动系统 -h 关闭系统 -c 取消运行shutdown  halt: 相当于 shutdown -h sudo halt  -w 并不会关机，将关机信息写入到/var/log/wtmp文件中 -d 关闭系统，不把记录写到/var/log/wtmp日志文件中 -f 不调用
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-03-20 21:00" pubdate>
+              2023-03-20
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Linux/" class="category-chain-item">Linux</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Linux/">#Linux</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/03/20/Linux-vi%E7%BC%96%E8%BE%91%E5%99%A8/" target="_self">
+          vi编辑器
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/03/20/Linux-vi%E7%BC%96%E8%BE%91%E5%99%A8/" target="_self">
+        <div>
+          vi编辑器基本操作
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-03-20 21:00" pubdate>
+              2023-03-20
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Linux/" class="category-chain-item">Linux</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Linux/">#Linux</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/03/20/%E5%A4%A7%E6%95%B0%E6%8D%AEhadoop%E5%91%BD%E4%BB%A4/" target="_self">
+          hadoop命令
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/03/20/%E5%A4%A7%E6%95%B0%E6%8D%AEhadoop%E5%91%BD%E4%BB%A4/" target="_self">
+        <div>
+          hadoop、zookeeper、hbase、mysql启停操作
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-03-20 21:00" pubdate>
+              2023-03-20
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="category-chain-item">大数据</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Linux/">#Linux</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/03/20/Linux%E6%97%A5%E5%B8%B8%E7%AE%A1%E7%90%86%E4%B8%8E%E7%BB%B4%E6%8A%A4/" target="_self">
+          Linux日常管理与维护
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/03/20/Linux%E6%97%A5%E5%B8%B8%E7%AE%A1%E7%90%86%E4%B8%8E%E7%BB%B4%E6%8A%A4/" target="_self">
+        <div>
+          任务计划 若希望在固定时间触发某个作业，就需要创建任务计划，按时执行该作业 cron实现任务计划方式  可通过修改/etc/crontab文件 root用户通过修改/etc/crontab文件可以实现任务计划，而普通用户却无法修改 2.使用crontab命令实现  1234567891011SHELL=/bin/bashPATH=/sbin:/bin:/usr/sbin:/usr/binMAILT
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-03-20 19:00" pubdate>
+              2023-03-20
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Linux/" class="category-chain-item">Linux</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Linux/">#Linux</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/03/20/Linux%E7%BD%91%E7%BB%9C%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/" target="_self">
+          Linux网络基本配置
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/03/20/Linux%E7%BD%91%E7%BB%9C%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/" target="_self">
+        <div>
+          常用网络配置文件 12345/etc/network/interfaces文件——&gt;静态IP地址配置/etc/resolv.conf文件/etc/hosts文件/etc/services文件/etc/hostname 文件——&gt;修改主机名 常用网络命令 12345ifconfig  ——&gt;查看IP地址ip addr   ——&gt;查看IP地址ping      ——&gt;测试
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-03-20 19:00" pubdate>
+              2023-03-20
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Linux/" class="category-chain-item">Linux</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Linux/">#Linux</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/03/20/Linux%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/" target="_self">
+          Linux进程管理
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/03/20/Linux%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/" target="_self">
+        <div>
+          进程 VS 程序、作业 1234程序是一个静态的命令集合，不占系统运行资源；（源代码，CD）进程是一个随时都可能发生变化的、动态的、使用系统运行资源的程序；（正在运行，播放CD）一个程序可以启动多个进程；作业是一系列按一定顺序执行的命令，可能会涉及到多个进程；（shell脚本） 进程特征 123456动态性：进程的实质是程序在多道程序系统中的一次执行过程，进程是动态产生、动态消亡的并发性：任何进程
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-03-20 19:00" pubdate>
+              2023-03-20
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Linux/" class="category-chain-item">Linux</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Linux/">#Linux</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/03/20/mysql%E5%AE%89%E8%A3%85/" target="_self">
+          mysql安装
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/03/20/mysql%E5%AE%89%E8%A3%85/" target="_self">
+        <div>
+          mysql8.0+安装教程
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-03-20 19:00" pubdate>
+              2023-03-20
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Linux/" class="category-chain-item">Linux</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
         
         
       </div>
@@ -290,6 +872,12 @@
   </div>
 
 
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/#board">2</a><a class="extend next" rel="next" href="/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
 
 
 
