@@ -18,23 +18,24 @@
   <meta name="author" content="RubyRose">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Linux面试知识">
+    <meta name="description" content="烟草相关知识">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux面试">
-<meta property="og:url" content="https://rubyrose-tat.github.io/2023/03/20/Linux%E9%9D%A2%E8%AF%95/index.html">
+<meta property="og:title" content="烟草笔试">
+<meta property="og:url" content="https://rubyrose-tat.github.io/2023/03/21/%E7%83%9F%E8%8D%89%E7%AC%94%E8%AF%95/index.html">
 <meta property="og:site_name" content="RubyRose">
-<meta property="og:description" content="Linux面试知识">
+<meta property="og:description" content="烟草相关知识">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-03-20T11:00:00.000Z">
-<meta property="article:modified_time" content="2023-03-20T15:07:40.647Z">
+<meta property="article:published_time" content="2023-03-20T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-03-21T16:44:30.010Z">
 <meta property="article:author" content="RubyRose">
-<meta property="article:tag" content="Linux">
-<meta property="article:tag" content="面试">
+<meta property="article:tag" content="考试">
+<meta property="article:tag" content="烟草">
+<meta property="article:tag" content="体制内">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Linux面试 - RubyRose</title>
+  <title>烟草笔试 - RubyRose</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -246,7 +247,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Linux面试"></span>
+            <span id="subtitle" data-typed-text="烟草笔试"></span>
           
         </div>
 
@@ -257,8 +258,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-03-20 19:00" pubdate>
-          2023年3月20日 晚上
+        <time datetime="2023-03-21 00:00" pubdate>
+          2023年3月21日 凌晨
         </time>
       </span>
     
@@ -269,7 +270,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          384 字
+          705 字
         
       </span>
     
@@ -280,7 +281,7 @@
         
         
         
-          4 分钟
+          6 分钟
         
       </span>
     
@@ -326,12 +327,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Linux面试</h1>
+            <h1 style="display: none">烟草笔试</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2023年3月20日 晚上
+                    本文最后更新于：2023年3月22日 凌晨
                   
                 
               </p>
@@ -339,26 +340,24 @@
             
               <div class="markdown-body">
                 
-                <h2 id="常用高级命令">常用高级命令</h2>
-<h5 id="查看进程">查看进程</h5>
-<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs diff">ps -ef / ps -aux<br><span class="hljs-deletion">-a 显示所有用户的进程</span><br><span class="hljs-deletion">-u 显示用户名和启动时间</span><br><span class="hljs-deletion">-x 显示所有进程，包括没有控制终端的进程</span><br><span class="hljs-deletion">-e 显示所有进程，包括没有控制终端的进程，较x选项，信息更为简略</span><br><span class="hljs-deletion">-l 显示进程详细信息，按长格式显示</span><br></code></pre></td></tr></table></figure>
-<h5 id="查看端口号">查看端口号</h5>
-<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs diff">natstat -anp<br><span class="hljs-deletion">-a 显示所有</span><br><span class="hljs-deletion">-n 只用数字显示，不用别名</span><br><span class="hljs-deletion">-p 显示进程号和进程名</span><br></code></pre></td></tr></table></figure>
-<h5 id="查看磁盘使用情况">查看磁盘使用情况</h5>
-<p><code>df -h</code></p>
-<h5 id="查看某个进程内存">查看某个进程内存</h5>
-<p><code>jmap -heap</code></p>
-<h2 id="shell">shell</h2>
-<h5 id="awk">awk</h5>
-<h5 id="sed">sed</h5>
-<h5 id="sort">sort</h5>
-<h5 id="cut">cut</h5>
-<h5 id="启停脚本">启停脚本</h5>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#！/bin/bash</span><br><span class="hljs-keyword">case</span> <span class="hljs-variable">$1</span> <span class="hljs-keyword">in</span><br><span class="hljs-string">&quot;start&quot;</span>)<br>	<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> hadoop1 hadoop2 hadoop3<br>	<span class="hljs-keyword">do</span> <br>		ssh <span class="hljs-variable">$i</span> <span class="hljs-string">&quot;绝对路径&quot;</span><br>	<span class="hljs-keyword">done</span><br>;;<br><span class="hljs-string">&quot;stop&quot;</span>)<br><br>;;<br><span class="hljs-keyword">esac</span><br></code></pre></td></tr></table></figure>
-<h5 id="引号">引号</h5>
-<p>‘’ 不解析里面变量的值</p>
-<p>“” 解析里面变量的值</p>
-<p>嵌套：看谁在最外面</p>
+                <h2 id="中烟工业与烟草局的区别">中烟工业与烟草局的区别</h2>
+<h4 id="性质不同">性质不同</h4>
+<p>中国烟草体制实行工商分离体制，即生产和销售分离的形式<br>
+中烟工业负责生产和运输，是工业企业<br>
+专卖局负责销售和稽查，是商业企业</p>
+<h4 id="职能不同">职能不同</h4>
+<p>在烟草公司生产产业链中，中烟工业和烟草局处在不同的链接上，分工不同，各司其职<br>
+中烟工业，主要负责卷烟生产，即烟草生产。但生产好的烟草制品不能直接销售给客户，要先卖给各地的烟草公司。<br>
+烟草专卖局，也就是烟草局，实行&quot;统一领导，垂直管理，专卖专营&quot;的烟草专卖管理体制。主要履行对国有资产经营、管理、监督;专卖执法、打假打私;负责卷烟营销、烟叶生产经验、物流配送;负责财务、人力资源、薪酬分配管理等职能。烟草专卖局对全行业&quot;人、财、物、产、供、销、内、外、贸&quot;进行统一管理。</p>
+<h4 id="组织体系不同">组织体系不同</h4>
+<p>中烟工业：无市县级工业企业，中烟工业下辖卷烟厂。<br>
+烟草专卖局：四级体系，分别是：国家烟草局、省烟草局、市烟草局、县烟草局，上级烟草管理下一级烟草局。</p>
+<h4 id="岗位分类不同">岗位分类不同</h4>
+<p>中烟工业招聘岗位主要有三类：生产操作类、专业管理类、专业技术类<br>
+1.生产操作类，如：操作工、电气维修工、机械维修工、工艺工、仪表维修工等.<br>
+2.专业管理类，如：档案管理员、新媒体管理员、仓储物流管理员、人力资源管理员、规范管理员、企业管理员、营销数据统计分析员等。<br>
+3.专业技术类，如：物流技术管理员、系统维护员、质量管理员、烟叶技术员、财务会计、技安管理员、工艺技术员、能源管理员、生产统计分析员、成本核算管理、审计员、信息技术员、基建技术员等等。<br>
+烟草局招聘岗位，主要包括管理技术类岗位与业务操作类岗位两大类。管理技术类岗位如文秘岗，业务操作类岗位，有卷烟营销、市场管理、烟叶生产等。</p>
 
                 
               </div>
@@ -377,7 +376,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Linux/" class="category-chain-item">Linux</a>
+  <a href="/categories/%E4%BD%93%E5%88%B6%E5%86%85%E8%80%83%E8%AF%95/" class="category-chain-item">体制内考试</a>
   
   
 
@@ -392,9 +391,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Linux/">#Linux</a>
+        <a href="/tags/%E8%80%83%E8%AF%95/">#考试</a>
       
-        <a href="/tags/%E9%9D%A2%E8%AF%95/">#面试</a>
+        <a href="/tags/%E7%83%9F%E8%8D%89/">#烟草</a>
+      
+        <a href="/tags/%E4%BD%93%E5%88%B6%E5%86%85/">#体制内</a>
       
     </div>
   
@@ -406,8 +407,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Linux面试</div>
-      <div>https://rubyrose-tat.github.io/2023/03/20/Linux面试/</div>
+      <div>烟草笔试</div>
+      <div>https://rubyrose-tat.github.io/2023/03/21/烟草笔试/</div>
     </div>
     <div class="license-meta">
       
@@ -419,7 +420,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年3月20日</div>
+          <div>2023年3月21日</div>
         </div>
       
       
@@ -463,15 +464,21 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/03/20/mysql/" title="mysql">
+                      <a href="/2023/03/21/%E9%9D%A2%E8%AF%95%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" title="面试常见问题">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">mysql</span>
+                        <span class="hidden-mobile">面试常见问题</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2023/03/20/Linux-vi%E7%BC%96%E8%BE%91%E5%99%A8/" title="vi编辑器">
+                        <span class="hidden-mobile">vi编辑器</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
