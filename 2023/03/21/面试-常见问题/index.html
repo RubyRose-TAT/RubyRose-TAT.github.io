@@ -18,25 +18,22 @@
   <meta name="author" content="RubyRose">
   <meta name="keywords" content="">
   
-    <meta name="description" content="mysql面试题">
+    <meta name="description" content="面试常见问题总结">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mysql">
-<meta property="og:url" content="https://rubyrose-tat.github.io/2023/03/20/mysql/index.html">
+<meta property="og:title" content="面试常见问题">
+<meta property="og:url" content="https://rubyrose-tat.github.io/2023/03/21/%E9%9D%A2%E8%AF%95-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="RubyRose">
-<meta property="og:description" content="mysql面试题">
+<meta property="og:description" content="面试常见问题总结">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://img01.anzhiy.cn/useruploads/114/2023/03/20/64187f13e831a.png">
-<meta property="og:image" content="https://img01.anzhiy.cn/useruploads/114/2023/03/20/64187f13e8481.png">
-<meta property="article:published_time" content="2023-03-20T11:00:00.000Z">
-<meta property="article:modified_time" content="2023-03-26T09:10:07.978Z">
+<meta property="article:published_time" content="2023-03-21T10:00:00.000Z">
+<meta property="article:modified_time" content="2023-07-25T03:51:40.842Z">
 <meta property="article:author" content="RubyRose">
 <meta property="article:tag" content="面试">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://img01.anzhiy.cn/useruploads/114/2023/03/20/64187f13e831a.png">
   
   
   
-  <title>mysql - RubyRose</title>
+  <title>面试常见问题 - RubyRose</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -248,7 +245,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="mysql"></span>
+            <span id="subtitle" data-typed-text="面试常见问题"></span>
           
         </div>
 
@@ -259,8 +256,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-03-20 19:00" pubdate>
-          2023年3月20日 晚上
+        <time datetime="2023-03-21 18:00" pubdate>
+          2023年3月21日 晚上
         </time>
       </span>
     
@@ -271,7 +268,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.7k 字
+          1.6k 字
         
       </span>
     
@@ -282,7 +279,7 @@
         
         
         
-          23 分钟
+          14 分钟
         
       </span>
     
@@ -328,12 +325,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">mysql</h1>
+            <h1 style="display: none">面试常见问题</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2023年3月26日 下午
+                    本文最后更新于：2023年7月25日 中午
                   
                 
               </p>
@@ -341,129 +338,32 @@
             
               <div class="markdown-body">
                 
-                <h2 id="SQL语句">SQL语句</h2>
-<hr>
-<h4 id="增">增</h4>
-<h6 id="创建用户：">创建用户：</h6>
-<p><code>create user [用户名]@'%' identified by '123456' </code>;</p>
-<h6 id="创建数据库：">创建数据库：</h6>
-<p><code>create database [数据库名];</code></p>
-<h6 id="创建数据库表：">创建数据库表：</h6>
-<p><code>create table [表名] (id int, name char(30));</code></p>
-<h6 id="插入数据">插入数据:</h6>
-<p><code>insert into [表名] (id,name,age) values (1,'张三',21);</code></p>
-<hr>
-<h4 id="删">删</h4>
-<h6 id="删除用户">删除用户:</h6>
-<p><code>drop user [用户名]@'%';</code></p>
-<h6 id="删除数据库">删除数据库:</h6>
-<p><code>drop database [数据库名];</code></p>
-<h6 id="删除数据表">删除数据表:</h6>
-<p><code>drop table [表名];</code></p>
-<h6 id="删除数据">删除数据:</h6>
-<p><code>delete from [表名] where id=5;</code></p>
-<p><code>delete from [表名] where age between 23 and 25;</code></p>
-<hr>
-<h4 id="改">改</h4>
-<h6 id="修改表中的数据">修改表中的数据:</h6>
-<p><code>update [表名] set age=21 where id=3;</code></p>
-<h6 id="修改表的名称">修改表的名称:</h6>
-<p><code>alter table [表名] rename [新表名];</code></p>
-<h6 id="修改表的字段类型">修改表的字段类型:</h6>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs mysql"># modify只能更改列定义(数据类型和其他属性)，不能更改列名<br>alter table [表名] modify name char(50);<br>describe [表名];<br></code></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs mysql"># change 可以更改列名称和列定义<br>alter table [表名] change name username char(50);<br>describe [表名];<br></code></pre></td></tr></table></figure>
-<h6 id="添加删除字段">添加删除字段:</h6>
-<p><code>alter table [表名] add time datetime;</code></p>
-<p><code>alter table [表名] drop time;</code></p>
-<hr>
-<h4 id="查">查</h4>
-<h6 id="查看所有数据库">查看所有数据库:</h6>
-<p><code>show databases;</code></p>
-<h6 id="查看指定库内所有数据表">查看指定库内所有数据表:</h6>
-<p><code>show tables;</code></p>
-<h6 id="查看指定数据表的字段结构">查看指定数据表的字段结构:</h6>
-<p><code>describe [表名];</code></p>
-<h6 id="查看所有MySQL用户密码及登录方式">查看所有MySQL用户密码及登录方式:</h6>
-<p><code>select User,Password,Host from mysql.user;</code></p>
-<h6 id="例子">例子:</h6>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs mysql"># 库表 student.report<br># 查询姓李的同学的个数<br>select count(*) from student.report where Name like &#x27;李%&#x27;;<br># 查询表中成绩大于80的前2名同学的名字，并按分数从大到小的顺序排列<br>select Result from report ORDER BY Result DESC limit 2;<br></code></pre></td></tr></table></figure>
-<hr>
-<h4 id="授权">授权</h4>
-<h6 id="授予用户全部权限">授予用户全部权限:</h6>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs mysql"># 给已存在用户授权<br>grant  all on [库名].[表名] to [用户名]@&#x27;%&#x27;;<br><br># 创建用户并授权<br>grant  all on [库名].[表名] to [用户名]@&#x27;%&#x27; identified by &#x27;123456&#x27;;<br></code></pre></td></tr></table></figure>
-<h6 id="取消用户的删除库、表、表中数据的权限">取消用户的删除库、表、表中数据的权限:</h6>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs mysql"> # 取消删除权限<br>revoke drop,delete on [库名].[表名] from [用户名]@&#x27;%&#x27;;<br><br># 查看指定用户的授权<br>show grants for [用户名]@&#x27;%&#x27;;<br></code></pre></td></tr></table></figure>
-<hr>
-<h4 id="启动关闭">启动关闭</h4>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-comment"># CentOS 6 及更早的版本中使用 service 命令来管理MySQL服务</span><br>service mysqld start<br>service mysqld stop<br>service mysqld restart<br>service mysqld status<br><br><span class="hljs-comment"># CentOS 7 或更新版本使用 systemctl 命令来管理MySQL服务</span><br>sudo systemctl start mysql  <span class="hljs-comment"># systemctl start mysqld.service</span><br>sudo systemctl stop mysql<br>sudo systemctl restart mysql<br>sudo systemctl status mysql<br><br><span class="hljs-comment"># 如果MySQL服务已经安装但没有作为系统服务运行，则可以使用以下命令手动启动和关闭MySQL服务</span><br>sudo <span class="hljs-regexp">/etc/i</span>nit.d/mysql start<br>sudo <span class="hljs-regexp">/etc/i</span>nit.d/mysql stop<br>sudo <span class="hljs-regexp">/etc/i</span>nit.d/mysql restart<br>sudo <span class="hljs-regexp">/etc/i</span>nit.d/mysql status<br><br><span class="hljs-comment"># 登录数据库</span><br>mysql -uroot -p<br></code></pre></td></tr></table></figure>
-<hr>
-<h2 id="MySQL集群">MySQL集群</h2>
-<hr>
-<h5 id="MySQL主从工作原理">MySQL主从工作原理</h5>
-<p>技术点：bin-log日志</p>
-<p>开启主服务器的bin-log日志记录功能，将主服务器的bin-log日志传到从服务器，从服务器根据日志内容将数据还原到本地。</p>
-<p><em>从服务器主动把主服务器上的数据同步到本地（备份）</em></p>
-<p><img src="https://img01.anzhiy.cn/useruploads/114/2023/03/20/64187f13e831a.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<h5 id="主从故障切换">主从故障切换</h5>
-<p>从服务器切换为主服务器</p>
-<ul>
-<li>
-<p>登陆所有从服务器查看POST信息，使用POST最大的作为新的主服务器</p>
-</li>
-<li>
-<p>对该服务器执行<code>stop slave</code></p>
-</li>
-<li>
-<p>修改 my.cnf 配置文件，开启该服务器的log-bin并重新启动数据库服务</p>
-</li>
-<li>
-<p>登陆数据库执行<code>restet master,  show master status</code>查看主库信息</p>
-<p>创建授权,同步用户与权限,修改对应服务器的IP地址等信息</p>
-</li>
-<li>
-<p>登陆其它从库，执行change master操作，查看同步状态</p>
-</li>
-</ul>
-<h5 id="数据库代理工具-Amoeba">数据库代理工具: Amoeba</h5>
-<p>Amoeba致力于MySQL的分布式数据库前端代理层，它主要在应用层访问MySQL的时候充当SQL路由功能，专注于分布式数据库代理层（Database Proxy）开发。具有负载均衡、高可用、SQL过滤、读写分离、数据切片的功能。</p>
-<p><img src="https://img01.anzhiy.cn/useruploads/114/2023/03/20/64187f13e8481.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<h2 id="MySQL索引">MySQL索引</h2>
-<h5 id="什么是索引">什么是索引</h5>
-<p>在MySQL数据库中，索引是一种用于优化查询性能的关键组件。索引的本质是数据结构，可以加速数据的查找和排序，通过减少磁盘I/O和内存操作来提高查询效率。</p>
-<p>MySQL支持多种类型的索引，包括B-Tree索引、Hash索引、Full-Text索引等。其中，B-Tree索引是最常见的索引类型，也是MySQL默认的索引类型。</p>
-<h5 id="索引的分类">索引的分类</h5>
-<p>主键索引</p>
-<p>单值索引	一个索引只包含单个列，一个表可以有多个单列索引。如果字段会被经常用来检索就可以用单值索引。</p>
-<p>复合索引	一个索引包含多个列</p>
-<p>唯一索引	所有列的值必须唯一，但是允许有空值。</p>
-<p>普通索引和唯一索引可以称为辅助索引</p>
-<h5 id="优势">优势</h5>
-<ol>
-<li>提高查询效率</li>
-<li>减少对数据表的排序操作</li>
-<li>随机IO查询变顺序IO查询</li>
-</ol>
-<h5 id="劣势">劣势</h5>
-<ol>
-<li>实际上索引也是一张表，包含主键和索引字段，并指向实体表的记录，索引列也是要占用空间的</li>
-<li>虽然索引提高了查询速度，但是会降低更新表的速度</li>
-<li>索引只是提高效率的一个因素，建立索引也要花费时间</li>
-</ol>
-<h5 id="什么时候需要创建索引">什么时候需要创建索引</h5>
-<ol>
-<li>主键自动建立唯一索引</li>
-<li>频繁作为查询条件的字段应该创建索引</li>
-<li>查询中与其他表关联的字段，外键关系创建索引</li>
-<li>单键/组合索引的选择问题：在高并发下倾向创建组合索引</li>
-<li>查询中排序的字段，排序字段若通过索引去访问将大大提高排序速度</li>
-<li>查询中统计和分组字段（group by）</li>
-</ol>
-<h5 id="哪些情况不要创建索引">哪些情况不要创建索引</h5>
-<ol>
-<li>频繁更新的字段不适合创建索引</li>
-<li>where条件里用不到的字段不创建索引</li>
-<li>表记录太少，如果才几万条数据，不需要创建索引</li>
-</ol>
+                <h2 id="人际关系">人际关系</h2>
+<p>人际关系总原则：工作为重，单位为重</p>
+<p>对待领导的原则：尊重，服从，请示</p>
+<p>对待同事的原则：尊重，关心，团结</p>
+<p>对待群众的原则：以群众为中心，急群众之所急</p>
+<p>对待亲友的原则：情理兼顾，坚守原则</p>
+<p>对待自己的原则：时刻反思，见贤思齐，见不贤而自省</p>
+<h2 id="自我介绍：">自我介绍：</h2>
+<p>面试官您好!我来自江西师范大学,是一名软件工程专业大数据技术方向的应届毕业生，非常荣幸能够参加这次面试。</p>
+<p>我在本科期间学习成绩优异，专业排名前30%，获得过校综合素质奖学金。同时也积极参加各类竞赛，其中在蓝桥杯程序设计大赛江西赛区获得了省级二等奖。</p>
+<p>我在大学期间带领团队完成了两个大数据相关的项目。我作为项目组长协调各个成员的工作和进度，同时也亲自参与数据分析和数据可视化的工作。在项目中，我注重与团队成员之间的沟通与协作，合理分配任务，让项目能够高效地推进。通过这些项目经验，我不仅对大数据的各种框架和原理有了更深入的理解和掌握，还锻炼了自己的团队沟通和组织协调能力。</p>
+<p>我非常希望能够加入贵公司，在相关领域发挥我的专业知识和技能，为企业的信息化建设和发展做出贡献。我相信我专业知识和技能能够为公司带来价值，期待能够加入贵公司，也希望贵公司能给我提供广阔的一个学习和成长平台。谢谢！</p>
+<h2 id="职业规划：">职业规划：</h2>
+<p>在未来一到两年内，我希望自己能够踏踏实实地深耕本专业领域，更加深入学习专业相关知识，同时结合工作实践和业余学习，我会不断去钻研新技术同时写博客积累，并且学习团队管理等方面的能力。那两三年内，我希望自己能够承担更多责任，比如说带新人、带团队，我想把自己积累的经验和知识分享给大家，协助我们的团队不断发展与壮大。</p>
+<h3 id="你的优势和不足，以及你以后在岗位上如何发挥作用">你的优势和不足，以及你以后在岗位上如何发挥作用</h3>
+<p>我是一名软件工程专业的应届毕业生。我的优点是对于技术的热情和好奇心，能够持续学习和探索新的技术知识，并将其应用到实践中。我善于分析问题和解决问题，具有较强的逻辑思维能力和团队合作精神。同时，我注重细节，具有良好的代码编写规范和文档撰写能力。</p>
+<p>我的不足之处在于经验不足，缺乏实践经验和项目经验，需要在实际工作中不断积累。同时，我还需要进一步提高自己的沟通能力和表达能力，以更好地与团队成员、上级和客户进行沟通和协作。在职场上，我也需要学习和适应职场规则和行为准则，养成良好的职业习惯和态度。</p>
+<h3 id="你对加班的看法">你对加班的看法</h3>
+<p>如果是工作需要我会义不容辞加班，我现在单身，没有任何家庭负担，可以全身心的投入工作。但同时，我也会提高工作效率，减少不必要的加班。</p>
+<h3 id="好的工作态度"><strong>好的工作态度</strong></h3>
+<p>良好的工作态度是以积极、负责和认真的态度对待工作，追求卓越，并持续学习和不断进步。我认为我具备良好的工作态度，例如，对待工作始终保持高度的责任心和热情，认真对待每一个任务并注重细节，与同事和领导保持良好的沟通和合作，此外我会结合工作经验和业余学习去不断学习新知识并提高自己的专业技能。</p>
+<h3 id="客户提出不合理要求如何应对">客户提出不合理要求如何应对</h3>
+<p>如果客户提出不合理的要求，我们应该冷静应对，我会首先尝试理解客户的需求和诉求，并耐心解释相关的原则和规定，告知客户为什么不能满足其要求。如果客户仍然坚持不合理的要求，我会与客户沟通，探讨其他可行的解决方案。如果仍然无法满足客户的要求，我会向上级领导汇报，并与团队成员讨论制定出相应的应对措施。最终，我会尽力保证客户的满意度和公司的利益，并保持良好的客户关系。</p>
+<h3 id="目前拿到了几个offer">目前拿到了几个offer</h3>
+<p>我现在确实有几份其它公司的offer，也在看其它公司的机会。但是经过今天和您的沟通以及对公司整体的了解，让我对咱们公司的印象非常好。无论是企业文化、管理方面还是工作氛围，都符合我对理想公司的预期。我非常希望能够得到这次机会。</p>
+<p>作为一个初级求职者，我一直在寻找适合我的工作机会，贵公司是我非常看好的一家公司之一。我早早地投递了贵公司，并希望能够有机会加入其中。目前，我手头还没有其他的工作机会，因此我非常珍惜这次面试的机会，希望能够在面试中展现自己的能力，并深入了解贵公司的整体情况。我非常期待能够加入贵公司，也希望贵公司能给我提供广阔的一个学习和成长平台。</p>
 
                 
               </div>
@@ -482,7 +382,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Linux/" class="category-chain-item">Linux</a>
+  <a href="/categories/%E6%89%BE%E5%B7%A5%E4%BD%9C/" class="category-chain-item">找工作</a>
   
   
 
@@ -509,8 +409,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>mysql</div>
-      <div>https://rubyrose-tat.github.io/2023/03/20/mysql/</div>
+      <div>面试常见问题</div>
+      <div>https://rubyrose-tat.github.io/2023/03/21/面试-常见问题/</div>
     </div>
     <div class="license-meta">
       
@@ -522,7 +422,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年3月20日</div>
+          <div>2023年3月21日</div>
         </div>
       
       
@@ -566,9 +466,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/03/20/Redis/" title="Redis">
+                      <a href="/2023/03/24/%E7%94%B3%E8%AE%BA%E4%BD%9C%E6%96%87/" title="申论作文">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Redis</span>
+                        <span class="hidden-mobile">申论作文</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -576,8 +476,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/03/20/mysql%E5%AE%89%E8%A3%85/" title="mysql安装">
-                        <span class="hidden-mobile">mysql安装</span>
+                      <a href="/2023/03/20/Linux-awk%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C%E5%B7%A5%E5%85%B7/" title="数据操作工具awk">
+                        <span class="hidden-mobile">数据操作工具awk</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
